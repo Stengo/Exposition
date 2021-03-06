@@ -5,7 +5,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private let statusItem: NSStatusItem = {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
-        statusItem.button?.image = NSImage(named:NSImage.Name("statusBarIcon"))
+        statusItem.button?.image = NSImage(named: NSImage.Name("statusBarIcon"))
 
         let menu = NSMenu()
         menu.addItem(
@@ -35,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return viewController
     }()
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    func applicationDidFinishLaunching(_: Notification) {
         window.makeKeyAndOrderFront(nil)
         let screenFrame = NSScreen.main?.frame ?? .zero
         window.setFrame(screenFrame, display: true)

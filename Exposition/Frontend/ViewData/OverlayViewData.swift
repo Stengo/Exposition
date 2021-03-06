@@ -1,15 +1,13 @@
 import Foundation
 
-struct OverlayStateFragment: Equatable {
-}
+struct OverlayStateFragment: Equatable {}
 
 struct OverlayViewData: ViewDataType {
     typealias StateFragment = OverlayStateFragment
 
-    static func fragment(of appState: AppState) -> StateFragment {
+    static func fragment(of _: AppState) -> StateFragment {
         return StateFragment()
     }
 
-    init(for fragment: StateFragment) {
-    }
+    init(for _: StateFragment) {}
 }

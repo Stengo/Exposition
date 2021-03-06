@@ -6,7 +6,7 @@ struct AppState: StateType, Equatable {
     }
 }
 
-func appReducer(action: Action, state: AppState?) -> AppState {
+func appReducer(action _: Action, state: AppState?) -> AppState {
     let state = state ?? .initialState
 
     return state

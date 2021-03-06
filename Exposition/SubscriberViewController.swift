@@ -1,5 +1,5 @@
-import ReSwift
 import AppKit
+import ReSwift
 
 class SubscriberViewController<ViewData: ViewDataType>: NSViewController, StoreSubscriber {
     typealias StoreSubscriberStateType = ViewData.StateFragment
