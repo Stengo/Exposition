@@ -2,7 +2,7 @@ import Cocoa
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
-    let statusItem: NSStatusItem = {
+    private let statusItem: NSStatusItem = {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
         statusItem.button?.image = NSImage(named:NSImage.Name("statusBarIcon"))
@@ -20,23 +20,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return statusItem
     }()
 
-    let window: NSWindow = {
-        let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 200, height: 80),
-            styleMask: .borderless,
-            backing: .buffered,
-            defer: false
-        )
+    private lazy var window: NSWindow = {
+        let window = NSWindow(contentViewController: overlayViewController)
+        window.styleMask = [.borderless]
         window.isOpaque = false
-        window.backgroundColor = NSColor.green.withAlphaComponent(0.5)
+        window.backgroundColor = .clear
         window.level = .floating
         window.ignoresMouseEvents = true
-        window.makeKeyAndOrderFront(nil)
         return window
     }()
 
+    private lazy var overlayViewController: OverlayViewController = {
+        let viewController = OverlayViewController()
+        return viewController
+    }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        window.makeKeyAndOrderFront(nil)
+        let screenFrame = NSScreen.main?.frame ?? .zero
+        window.setFrame(screenFrame, display: true)
     }
 }
-
