@@ -58,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				6D471AF825F3754F00685B62 /* AppDelegate.swift */,
-				6D471B1825F4120C00685B62 /* Views */,
+				6D471B1825F4120C00685B62 /* Frontend */,
 				6D471AFA25F3755000685B62 /* Assets.xcassets */,
 				6D471AFC25F3755000685B62 /* MainMenu.xib */,
 				6D471AFF25F3755000685B62 /* Info.plist */,
@@ -67,14 +67,14 @@
 			path = Exposition;
 			sourceTree = "<group>";
 		};
-		6D471B1825F4120C00685B62 /* Views */ = {
+		6D471B1825F4120C00685B62 /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
 				6D471B1925F4122800685B62 /* OverlayViewController.swift */,
 				6D471B1C25F4124A00685B62 /* KeyCombinationView.swift */,
 				6D471B1F25F4125300685B62 /* KeyView.swift */,
 			);
-			path = Views;
+			path = Frontend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
