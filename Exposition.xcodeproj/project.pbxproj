@@ -125,6 +125,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D471B0325F3755000685B62 /* Build configuration list for PBXNativeTarget "Exposition" */;
 			buildPhases = (
+				6D471B3F25F41A6C00685B62 /* Run SwiftFormat */,
 				6D471AF125F3754F00685B62 /* Sources */,
 				6D471AF225F3754F00685B62 /* Frameworks */,
 				6D471AF325F3754F00685B62 /* Resources */,
@@ -187,6 +188,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D471B3F25F41A6C00685B62 /* Run SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\nSDKROOT=macosx\nswift run -c release swiftformat \"$SRCROOT\" --swiftversion 5.0\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6D471AF125F3754F00685B62 /* Sources */ = {

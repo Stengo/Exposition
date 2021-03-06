@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftFormat",
+        "repositoryURL": "https://github.com/nicklockwood/SwiftFormat",
+        "state": {
+          "branch": null,
+          "revision": "018dc23c09a0aff627c026298fda6551a6b1cb81",
+          "version": "0.47.12"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
