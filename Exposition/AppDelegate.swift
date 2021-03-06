@@ -20,7 +20,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return statusItem
     }()
 
-    @IBOutlet var window: NSWindow!
+    let window: NSWindow = {
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 200, height: 80),
+            styleMask: .borderless,
+            backing: .buffered,
+            defer: false
+        )
+        window.isOpaque = false
+        window.backgroundColor = NSColor.green.withAlphaComponent(0.5)
+        window.level = .floating
+        window.ignoresMouseEvents = true
+        window.makeKeyAndOrderFront(nil)
+        return window
+    }()
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
