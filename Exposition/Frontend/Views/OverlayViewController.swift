@@ -1,6 +1,6 @@
 import AppKit
 
-final class OverlayViewController: NSViewController {
+final class OverlayViewController: SubscriberViewController<OverlayViewData> {
     private lazy var keyCombinationView: KeyCombinationView = {
         let view = KeyCombinationView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -29,6 +29,9 @@ final class OverlayViewController: NSViewController {
             keyCombinationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             keyCombinationView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
         ])
+    }
+
+    override func update(with viewData: OverlayViewData) {
     }
 
     required init?(coder: NSCoder) {
