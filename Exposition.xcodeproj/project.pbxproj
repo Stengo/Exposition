@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		6D471B1A25F4122800685B62 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D471B1925F4122800685B62 /* OverlayViewController.swift */; };
 		6D471B1D25F4124A00685B62 /* KeyCombinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D471B1C25F4124A00685B62 /* KeyCombinationView.swift */; };
 		6D471B2025F4125300685B62 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D471B1F25F4125300685B62 /* KeyView.swift */; };
+		6D471B2725F4148800685B62 /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6D471B2625F4148800685B62 /* ReSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D471B2725F4148800685B62 /* ReSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +95,9 @@
 			dependencies = (
 			);
 			name = Exposition;
+			packageProductDependencies = (
+				6D471B2625F4148800685B62 /* ReSwift */,
+			);
 			productName = Exposition;
 			productReference = 6D471AF525F3754F00685B62 /* Exposition.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 6D471AEC25F3754F00685B62;
+			packageReferences = (
+				6D471B2525F4148800685B62 /* XCRemoteSwiftPackageReference "ReSwift" */,
+			);
 			productRefGroup = 6D471AF625F3754F00685B62 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -342,6 +350,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6D471B2525F4148800685B62 /* XCRemoteSwiftPackageReference "ReSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReSwift/ReSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6D471B2625F4148800685B62 /* ReSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D471B2525F4148800685B62 /* XCRemoteSwiftPackageReference "ReSwift" */;
+			productName = ReSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6D471AED25F3754F00685B62 /* Project object */;
 }
