@@ -20,6 +20,7 @@
 		6D471B3825F415DA00685B62 /* OverlayViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D471B3725F415DA00685B62 /* OverlayViewData.swift */; };
 		6D471B3C25F416E600685B62 /* SideEffectsMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D471B3B25F416E600685B62 /* SideEffectsMiddleware.swift */; };
 		6DC8625225F4D90C000BBADC /* KeyLoggerSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC8625125F4D90C000BBADC /* KeyLoggerSideEffect.swift */; };
+		6DC8625B25F4EE48000BBADC /* Sauce in Frameworks */ = {isa = PBXBuildFile; productRef = 6DC8625A25F4EE48000BBADC /* Sauce */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC8625B25F4EE48000BBADC /* Sauce in Frameworks */,
 				6D471B2725F4148800685B62 /* ReSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +160,7 @@
 			name = Exposition;
 			packageProductDependencies = (
 				6D471B2625F4148800685B62 /* ReSwift */,
+				6DC8625A25F4EE48000BBADC /* Sauce */,
 			);
 			productName = Exposition;
 			productReference = 6D471AF525F3754F00685B62 /* Exposition.app */;
@@ -188,6 +191,7 @@
 			mainGroup = 6D471AEC25F3754F00685B62;
 			packageReferences = (
 				6D471B2525F4148800685B62 /* XCRemoteSwiftPackageReference "ReSwift" */,
+				6DC8625925F4EE48000BBADC /* XCRemoteSwiftPackageReference "Sauce" */,
 			);
 			productRefGroup = 6D471AF625F3754F00685B62 /* Products */;
 			projectDirPath = "";
@@ -454,6 +458,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		6DC8625925F4EE48000BBADC /* XCRemoteSwiftPackageReference "Sauce" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Clipy/Sauce.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -461,6 +473,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6D471B2525F4148800685B62 /* XCRemoteSwiftPackageReference "ReSwift" */;
 			productName = ReSwift;
+		};
+		6DC8625A25F4EE48000BBADC /* Sauce */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6DC8625925F4EE48000BBADC /* XCRemoteSwiftPackageReference "Sauce" */;
+			productName = Sauce;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
