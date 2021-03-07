@@ -19,6 +19,7 @@
 		6D471B3325F4153700685B62 /* SubscriberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D471B3225F4153700685B62 /* SubscriberViewController.swift */; };
 		6D471B3825F415DA00685B62 /* OverlayViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D471B3725F415DA00685B62 /* OverlayViewData.swift */; };
 		6D471B3C25F416E600685B62 /* SideEffectsMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D471B3B25F416E600685B62 /* SideEffectsMiddleware.swift */; };
+		6DC8625225F4D90C000BBADC /* KeyLoggerSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC8625125F4D90C000BBADC /* KeyLoggerSideEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		6D471B3725F415DA00685B62 /* OverlayViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewData.swift; sourceTree = "<group>"; };
 		6D471B3B25F416E600685B62 /* SideEffectsMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffectsMiddleware.swift; sourceTree = "<group>"; };
 		6DC8624625F4D322000BBADC /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		6DC8625125F4D90C000BBADC /* KeyLoggerSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyLoggerSideEffect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				6D471B2E25F414E400685B62 /* AppState.swift */,
 				6D471B3B25F416E600685B62 /* SideEffectsMiddleware.swift */,
 				6D471B2A25F414C000685B62 /* Store.swift */,
+				6DC8625025F4D8D1000BBADC /* KeyLogger */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -126,6 +129,14 @@
 				6DC8624625F4D322000BBADC /* Base.xcconfig */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		6DC8625025F4D8D1000BBADC /* KeyLogger */ = {
+			isa = PBXGroup;
+			children = (
+				6DC8625125F4D90C000BBADC /* KeyLoggerSideEffect.swift */,
+			);
+			path = KeyLogger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +239,7 @@
 				6D471B3C25F416E600685B62 /* SideEffectsMiddleware.swift in Sources */,
 				6D471B2B25F414C000685B62 /* Store.swift in Sources */,
 				6D471B2025F4125300685B62 /* KeyView.swift in Sources */,
+				6DC8625225F4D90C000BBADC /* KeyLoggerSideEffect.swift in Sources */,
 				6D471AF925F3754F00685B62 /* AppDelegate.swift in Sources */,
 				6D471B3325F4153700685B62 /* SubscriberViewController.swift in Sources */,
 				6D471B2F25F414E400685B62 /* AppState.swift in Sources */,
