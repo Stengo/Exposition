@@ -1,4 +1,9 @@
 import Cocoa
+import ReSwift
+
+enum AppDelegateAction: Action {
+    case didFinishLaunching
+}
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -39,5 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.makeKeyAndOrderFront(nil)
         let screenFrame = NSScreen.main?.frame ?? .zero
         window.setFrame(screenFrame, display: true)
+
+        store.dispatch(AppDelegateAction.didFinishLaunching)
     }
 }
