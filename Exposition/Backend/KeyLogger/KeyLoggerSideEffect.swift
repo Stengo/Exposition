@@ -1,9 +1,8 @@
 import Cocoa
 import Foundation
-import Sauce
 
 func keyLoggerSideEffect() -> SideEffect {
-    return { action, _, _ in
+    return { action, dispatch, _ in
         switch action {
         case AppDelegateAction.didFinishLaunching:
             guard isPermissionGranted(shouldAskForPermission: true) else {
@@ -11,8 +10,12 @@ func keyLoggerSideEffect() -> SideEffect {
                 return
             }
             NSEvent.addGlobalMonitorForEvents(matching: [.keyDown]) { event in
-                let key = Sauce.shared.key(by: Int(event.keyCode))
-                print("\(key)")
+                let keyEvent = KeyEvent(
+                    keyCode: event.keyCode,
+                    modifierFlags: event.modifierFlags,
+                    date: Date()
+                )
+                dispatch(KeyLoggerAction.didTrigger(keyEvent))
             }
 
         default:
