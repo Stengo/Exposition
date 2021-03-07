@@ -36,6 +36,7 @@
 		6D471B3225F4153700685B62 /* SubscriberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberViewController.swift; sourceTree = "<group>"; };
 		6D471B3725F415DA00685B62 /* OverlayViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewData.swift; sourceTree = "<group>"; };
 		6D471B3B25F416E600685B62 /* SideEffectsMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffectsMiddleware.swift; sourceTree = "<group>"; };
+		6DC8624625F4D322000BBADC /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 		6D471AF725F3754F00685B62 /* Exposition */ = {
 			isa = PBXGroup;
 			children = (
+				6DC8624525F4D2FB000BBADC /* Configurations */,
 				6D471AF825F3754F00685B62 /* AppDelegate.swift */,
 				6D471B3225F4153700685B62 /* SubscriberViewController.swift */,
 				6D471B2925F414B100685B62 /* Backend */,
@@ -116,6 +118,14 @@
 				6D471B3725F415DA00685B62 /* OverlayViewData.swift */,
 			);
 			path = ViewData;
+			sourceTree = "<group>";
+		};
+		6DC8624525F4D2FB000BBADC /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				6DC8624625F4D322000BBADC /* Base.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +253,7 @@
 /* Begin XCBuildConfiguration section */
 		6D471B0125F3755000685B62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DC8624625F4D322000BBADC /* Base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -304,6 +315,7 @@
 		};
 		6D471B0225F3755000685B62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DC8624625F4D322000BBADC /* Base.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -358,6 +370,7 @@
 		};
 		6D471B0425F3755000685B62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DC8624625F4D322000BBADC /* Base.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -378,6 +391,7 @@
 		};
 		6D471B0525F3755000685B62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DC8624625F4D322000BBADC /* Base.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
