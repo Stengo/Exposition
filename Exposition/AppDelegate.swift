@@ -7,24 +7,6 @@ enum AppDelegateAction: Action {
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
-    private let statusItem: NSStatusItem = {
-        let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-
-        statusItem.button?.image = NSImage(named: NSImage.Name("statusBarIcon"))
-
-        let menu = NSMenu()
-        menu.addItem(
-            NSMenuItem(
-                title: "Quit Exposition",
-                action: #selector(NSApplication.terminate),
-                keyEquivalent: ""
-            )
-        )
-        statusItem.menu = menu
-
-        return statusItem
-    }()
-
     private lazy var window: NSWindow = {
         let window = NSWindow(contentViewController: overlayViewController)
         window.styleMask = [.borderless]
@@ -41,10 +23,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return viewController
     }()
 
+    private var menuHandler: MenuHandler?
+
     func applicationDidFinishLaunching(_: Notification) {
         window.makeKeyAndOrderFront(nil)
         let screenFrame = NSScreen.main?.frame ?? .zero
         window.setFrame(screenFrame, display: true)
+
+        menuHandler = MenuHandler()
 
         store.dispatch(AppDelegateAction.didFinishLaunching)
     }

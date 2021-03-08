@@ -21,6 +21,8 @@
 		6D471B3C25F416E600685B62 /* SideEffectsMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D471B3B25F416E600685B62 /* SideEffectsMiddleware.swift */; };
 		6DACBD2A25F6760F00F4F4D1 /* SplitSideAlignedKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DACBD2925F6760F00F4F4D1 /* SplitSideAlignedKeyView.swift */; };
 		6DACBD2D25F6763600F4F4D1 /* SplitCenterKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DACBD2C25F6763600F4F4D1 /* SplitCenterKeyView.swift */; };
+		6DACBD3125F6ABA900F4F4D1 /* MenuHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DACBD3025F6ABA900F4F4D1 /* MenuHandler.swift */; };
+		6DACBD3525F6AC3F00F4F4D1 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DACBD3425F6AC3F00F4F4D1 /* SettingsState.swift */; };
 		6DC8625225F4D90C000BBADC /* KeyLoggerSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC8625125F4D90C000BBADC /* KeyLoggerSideEffect.swift */; };
 		6DC8625B25F4EE48000BBADC /* Sauce in Frameworks */ = {isa = PBXBuildFile; productRef = 6DC8625A25F4EE48000BBADC /* Sauce */; };
 		6DC8625E25F55075000BBADC /* KeyLoggerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC8625D25F55075000BBADC /* KeyLoggerState.swift */; };
@@ -43,6 +45,8 @@
 		6D471B3B25F416E600685B62 /* SideEffectsMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffectsMiddleware.swift; sourceTree = "<group>"; };
 		6DACBD2925F6760F00F4F4D1 /* SplitSideAlignedKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitSideAlignedKeyView.swift; sourceTree = "<group>"; };
 		6DACBD2C25F6763600F4F4D1 /* SplitCenterKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitCenterKeyView.swift; sourceTree = "<group>"; };
+		6DACBD3025F6ABA900F4F4D1 /* MenuHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHandler.swift; sourceTree = "<group>"; };
+		6DACBD3425F6AC3F00F4F4D1 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
 		6DC8624625F4D322000BBADC /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		6DC8625125F4D90C000BBADC /* KeyLoggerSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyLoggerSideEffect.swift; sourceTree = "<group>"; };
 		6DC8625D25F55075000BBADC /* KeyLoggerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyLoggerState.swift; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 			children = (
 				6DC8624525F4D2FB000BBADC /* Configurations */,
 				6D471AF825F3754F00685B62 /* AppDelegate.swift */,
+				6DACBD3025F6ABA900F4F4D1 /* MenuHandler.swift */,
 				6D471B3225F4153700685B62 /* SubscriberViewController.swift */,
 				6D471B2925F414B100685B62 /* Backend */,
 				6D471B1825F4120C00685B62 /* Frontend */,
@@ -109,6 +114,7 @@
 				6D471B3B25F416E600685B62 /* SideEffectsMiddleware.swift */,
 				6D471B2A25F414C000685B62 /* Store.swift */,
 				6DC8625025F4D8D1000BBADC /* KeyLogger */,
+				6DACBD3325F6AC0E00F4F4D1 /* Settings */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -131,6 +137,14 @@
 				6D471B3725F415DA00685B62 /* OverlayViewData.swift */,
 			);
 			path = ViewData;
+			sourceTree = "<group>";
+		};
+		6DACBD3325F6AC0E00F4F4D1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6DACBD3425F6AC3F00F4F4D1 /* SettingsState.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		6DC8624525F4D2FB000BBADC /* Configurations */ = {
@@ -252,10 +266,12 @@
 				6D471B3C25F416E600685B62 /* SideEffectsMiddleware.swift in Sources */,
 				6DACBD2A25F6760F00F4F4D1 /* SplitSideAlignedKeyView.swift in Sources */,
 				6D471B2B25F414C000685B62 /* Store.swift in Sources */,
+				6DACBD3525F6AC3F00F4F4D1 /* SettingsState.swift in Sources */,
 				6D471B2025F4125300685B62 /* SingleKeyView.swift in Sources */,
 				6DC8625225F4D90C000BBADC /* KeyLoggerSideEffect.swift in Sources */,
 				6DC8625E25F55075000BBADC /* KeyLoggerState.swift in Sources */,
 				6D471AF925F3754F00685B62 /* AppDelegate.swift in Sources */,
+				6DACBD3125F6ABA900F4F4D1 /* MenuHandler.swift in Sources */,
 				6D471B3325F4153700685B62 /* SubscriberViewController.swift in Sources */,
 				6D471B2F25F414E400685B62 /* AppState.swift in Sources */,
 				6D471B1A25F4122800685B62 /* OverlayViewController.swift in Sources */,
