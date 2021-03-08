@@ -185,7 +185,7 @@ enum KeyViewData {
         case .keypadComma:
             self = .single(symbol: ",")
         case .eisu, .yen, .kana, .atSign, .caret, .colon, .section:
-            self = .splitCenter(symbolTop: "?", symbolBottom: "unknown")
+            self = .splitSide(symbolTop: "?", symbolBottom: "unknown")
         }
     }
 }
