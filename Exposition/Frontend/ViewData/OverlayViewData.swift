@@ -53,7 +53,7 @@ enum KeyViewData {
             keys.append(.splitRight(symbolTop: "⌘", symbolBottom: "command"))
         }
         if modifierFlags.contains(.shift) {
-            keys.append(.splitLeft(symbolTop: "", symbolBottom: "shift"))
+            keys.append(.splitLeft(symbolTop: "⇧", symbolBottom: "shift"))
         }
         return keys
     }
@@ -141,13 +141,13 @@ enum KeyViewData {
         case .keypadNine:
             self = .single(symbol: "9")
         case .return:
-            self = .splitRight(symbolTop: "", symbolBottom: "return")
+            self = .splitRight(symbolTop: "⏎", symbolBottom: "return")
         case .tab:
-            self = .splitLeft(symbolTop: "", symbolBottom: "tab")
+            self = .splitLeft(symbolTop: "⇥", symbolBottom: "tab")
         case .space:
-            self = .splitCenter(symbolTop: "", symbolBottom: "␣")
+            self = .single(symbol: "␣")
         case .delete:
-            self = .splitRight(symbolTop: "", symbolBottom: "delete")
+            self = .splitRight(symbolTop: "⌫", symbolBottom: "delete")
         case .escape:
             self = .splitLeft(symbolTop: "", symbolBottom: "esc")
         case .f1, .f2, .f3, .f4, .f5, .f6, .f7, .f8, .f9, .f10, .f11, .f12, .f13, .f14, .f15, .f16, .f17, .f18, .f19, .f20:
