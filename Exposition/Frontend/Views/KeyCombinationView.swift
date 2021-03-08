@@ -22,6 +22,7 @@ final class KeyCombinationView: NSView {
 
     func setupView() {
         wantsLayer = true
+        alphaValue = 0
 
         addSubview(keysStackView)
     }
@@ -47,6 +48,10 @@ final class KeyCombinationView: NSView {
     }
 
     func render(_ viewData: KeyCombinationViewData) {
+        guard viewData.keys.isEmpty == false else {
+            return
+        }
+
         animationTimer?.invalidate()
         animationTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [weak self] _ in
             NSAnimationContext.runAnimationGroup { context in
