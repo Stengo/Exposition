@@ -1,3 +1,9 @@
+<h3 align="center">
+  <a href="https://github.com/Stengo/Exposition/blob/main/Exposition/Assets.xcassets/AppIcon.appiconset/icon64.png">
+  <img src="https://github.com/Stengo/Exposition/blob/main/Exposition/Assets.xcassets/AppIcon.appiconset/icon128.png?raw=true" alt="Exposition Icon">
+  </a>
+</h3>
+
 # Exposition
 
 ## Getting Started
