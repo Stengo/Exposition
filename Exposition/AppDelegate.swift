@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.backgroundColor = .clear
         window.level = .floating
         window.ignoresMouseEvents = true
+        window.hasShadow = false
         return window
     }()
 
