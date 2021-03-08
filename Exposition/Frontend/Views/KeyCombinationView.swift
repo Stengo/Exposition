@@ -21,6 +21,8 @@ final class KeyCombinationView: NSView {
     }
 
     func setupView() {
+        wantsLayer = true
+
         addSubview(keysStackView)
     }
 
@@ -33,17 +35,28 @@ final class KeyCombinationView: NSView {
         ])
     }
 
+    override func layout() {
+        super.layout()
+
+        layer?.cornerRadius = bounds.height / 8
+        let inset = bounds.height / 10
+        keysStackView.spacing = inset
+        keysStackView.edgeInsets = NSEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
+
+        layer?.backgroundColor = NSColor.windowFrameColor.cgColor
+    }
+
     func render(_ viewData: KeyCombinationViewData) {
         animationTimer?.invalidate()
         animationTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [weak self] _ in
             NSAnimationContext.runAnimationGroup { context in
                 context.duration = 0.5
-                self?.keysStackView.animator().alphaValue = 0
+                self?.animator().alphaValue = 0
             }
         })
         NSAnimationContext.runAnimationGroup { [weak self] context in
             context.duration = 0.5
-            self?.keysStackView.animator().alphaValue = 1
+            self?.animator().alphaValue = 1
         }
         keysStackView.arrangedSubviews.forEach {
             $0.removeFromSuperview()
