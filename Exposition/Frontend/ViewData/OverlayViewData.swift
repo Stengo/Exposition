@@ -4,6 +4,7 @@ import Sauce
 
 struct OverlayStateFragment: Equatable {
     let keyLoggerState: KeyLoggerState
+    let settingsState: SettingsState
 }
 
 struct OverlayViewData: ViewDataType {
@@ -13,7 +14,8 @@ struct OverlayViewData: ViewDataType {
 
     static func fragment(of appState: AppState) -> StateFragment {
         return StateFragment(
-            keyLoggerState: appState.keyLoggerState
+            keyLoggerState: appState.keyLoggerState,
+            settingsState: appState.settingsState
         )
     }
 
@@ -25,6 +27,13 @@ struct OverlayViewData: ViewDataType {
             keyCombination = KeyCombinationViewData(keys: [])
             return
         }
+
+        let isCombination = keyEvent.modifierFlags.isDisjoint(with: [.control, .option, .command]) == false
+        guard fragment.settingsState.shouldShowCombinationsOnly == false || isCombination else {
+            keyCombination = KeyCombinationViewData(keys: [])
+            return
+        }
+
         let modifiersViewData = KeyViewData.keys(for: keyEvent.modifierFlags)
         let keyViewData = KeyViewData(key: key)
         keyCombination = KeyCombinationViewData(keys: modifiersViewData + [keyViewData])
