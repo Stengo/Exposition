@@ -70,9 +70,9 @@ final class SplitCenterKeyView: NSView {
 
         layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
         topTextView.backgroundColor = NSColor.textBackgroundColor
-        topTextView.textColor = NSColor.textColor
+        topTextView.textColor = NSColor.secondaryLabelColor
         bottomTextView.backgroundColor = NSColor.textBackgroundColor
-        bottomTextView.textColor = NSColor.textColor
+        bottomTextView.textColor = NSColor.secondaryLabelColor
     }
 
     func render(symbolTop: String, symbolBottom: String) {

@@ -44,7 +44,7 @@ final class SingleKeyView: NSView {
 
         layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
         textView.backgroundColor = NSColor.textBackgroundColor
-        textView.textColor = NSColor.textColor
+        textView.textColor = NSColor.secondaryLabelColor
     }
 
     func render(symbol: String) {
