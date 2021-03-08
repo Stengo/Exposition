@@ -7,6 +7,8 @@ final class KeyCombinationView: NSView {
         return stackView
     }()
 
+    var animationTimer: Timer?
+
     init() {
         super.init(frame: .zero)
         setupView()
@@ -32,7 +34,20 @@ final class KeyCombinationView: NSView {
     }
 
     func render(_ viewData: KeyCombinationViewData) {
-        keysStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        animationTimer?.invalidate()
+        animationTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [weak self] _ in
+            NSAnimationContext.runAnimationGroup { context in
+                context.duration = 0.5
+                self?.keysStackView.animator().alphaValue = 0
+            }
+        })
+        NSAnimationContext.runAnimationGroup { [weak self] context in
+            context.duration = 0.5
+            self?.keysStackView.animator().alphaValue = 1
+        }
+        keysStackView.arrangedSubviews.forEach {
+            $0.removeFromSuperview()
+        }
         viewData.keys.forEach { keyViewData in
             let view = KeyView()
             view.render(keyViewData)
