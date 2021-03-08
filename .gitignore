@@ -1,3 +1,4 @@
 BuildTools/.build
 BuildTools/.swiftpm
 Exposition/Configurations/DevelopmentTeam.xcconfig
+xcuserdata/
