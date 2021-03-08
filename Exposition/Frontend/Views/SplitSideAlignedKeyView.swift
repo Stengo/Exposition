@@ -26,8 +26,6 @@ final class SplitSideAlignedKeyView: NSView {
         return layoutGuide
     }()
 
-    private var aspectRatioConstraint: NSLayoutConstraint?
-
     init() {
         super.init(frame: .zero)
         setupView()
@@ -62,6 +60,8 @@ final class SplitSideAlignedKeyView: NSView {
             bottomTextView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
             bottomTextView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),
             bottomTextView.centerYAnchor.constraint(equalTo: layoutGuide.bottomAnchor),
+
+            widthAnchor.constraint(equalTo: heightAnchor, multiplier: 1.5),
         ])
     }
 
@@ -73,11 +73,7 @@ final class SplitSideAlignedKeyView: NSView {
         layer?.cornerRadius = bounds.height / 10
     }
 
-    func render(symbolTop: String, symbolBottom: String, aspectRatio: Double, isLeftAligned: Bool) {
-        aspectRatioConstraint?.isActive = false
-        aspectRatioConstraint = widthAnchor.constraint(equalTo: heightAnchor, multiplier: CGFloat(aspectRatio))
-        aspectRatioConstraint?.isActive = true
-
+    func render(symbolTop: String, symbolBottom: String, isLeftAligned: Bool) {
         topTextView.alignment = isLeftAligned ? .left : .right
         bottomTextView.alignment = isLeftAligned ? .left : .right
 

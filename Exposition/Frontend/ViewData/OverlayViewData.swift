@@ -38,22 +38,22 @@ struct KeyCombinationViewData {
 enum KeyViewData {
     case single(symbol: String)
     case splitCenter(symbolTop: String, symbolBottom: String)
-    case splitRight(symbolTop: String, symbolBottom: String, aspectRatio: Double)
-    case splitLeft(symbolTop: String, symbolBottom: String, aspectRatio: Double)
+    case splitRight(symbolTop: String, symbolBottom: String)
+    case splitLeft(symbolTop: String, symbolBottom: String)
 
     static func keys(for modifierFlags: NSEvent.ModifierFlags) -> [KeyViewData] {
         var keys: [KeyViewData] = []
         if modifierFlags.contains(.control) {
-            keys.append(.splitLeft(symbolTop: "⌃", symbolBottom: "control", aspectRatio: 1.6))
+            keys.append(.splitLeft(symbolTop: "⌃", symbolBottom: "control"))
         }
         if modifierFlags.contains(.option) {
-            keys.append(.splitRight(symbolTop: "⌥", symbolBottom: "option", aspectRatio: 1.3))
+            keys.append(.splitRight(symbolTop: "⌥", symbolBottom: "option"))
         }
         if modifierFlags.contains(.command) {
-            keys.append(.splitRight(symbolTop: "⌘", symbolBottom: "command", aspectRatio: 1.6))
+            keys.append(.splitRight(symbolTop: "⌘", symbolBottom: "command"))
         }
         if modifierFlags.contains(.shift) {
-            keys.append(.splitLeft(symbolTop: "", symbolBottom: "shift", aspectRatio: 2.5))
+            keys.append(.splitLeft(symbolTop: "", symbolBottom: "shift"))
         }
         return keys
     }
@@ -141,15 +141,15 @@ enum KeyViewData {
         case .keypadNine:
             self = .single(symbol: "9")
         case .return:
-            self = .splitRight(symbolTop: "", symbolBottom: "return", aspectRatio: 1.9)
+            self = .splitRight(symbolTop: "", symbolBottom: "return")
         case .tab:
-            self = .splitLeft(symbolTop: "", symbolBottom: "tab", aspectRatio: 1.6)
+            self = .splitLeft(symbolTop: "", symbolBottom: "tab")
         case .space:
             self = .splitCenter(symbolTop: "", symbolBottom: "␣")
         case .delete:
-            self = .splitRight(symbolTop: "", symbolBottom: "delete", aspectRatio: 1.6)
+            self = .splitRight(symbolTop: "", symbolBottom: "delete")
         case .escape:
-            self = .splitLeft(symbolTop: "", symbolBottom: "esc", aspectRatio: 1.6)
+            self = .splitLeft(symbolTop: "", symbolBottom: "esc")
         case .f1, .f2, .f3, .f4, .f5, .f6, .f7, .f8, .f9, .f10, .f11, .f12, .f13, .f14, .f15, .f16, .f17, .f18, .f19, .f20:
             self = .splitCenter(symbolTop: "", symbolBottom: key.rawValue.uppercased())
         case .help:
