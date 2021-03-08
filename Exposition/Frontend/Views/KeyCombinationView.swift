@@ -49,9 +49,27 @@ final class KeyCombinationView: NSView {
             $0.removeFromSuperview()
         }
         viewData.keys.forEach { keyViewData in
-            let view = KeyView()
-            view.render(keyViewData)
-            keysStackView.addArrangedSubview(view)
+            switch keyViewData {
+            case let .single(symbol):
+                let view = SingleKeyView()
+                view.render(symbol: symbol)
+                keysStackView.addArrangedSubview(view)
+
+            case let .splitCenter(symbolTop, symbolBottom):
+                let view = SplitCenterKeyView()
+                view.render(symbolTop: symbolTop, symbolBottom: symbolBottom)
+                keysStackView.addArrangedSubview(view)
+
+            case let .splitLeft(symbolTop, symbolBottom, aspectRatio):
+                let view = SplitSideAlignedKeyView()
+                view.render(symbolTop: symbolTop, symbolBottom: symbolBottom, aspectRatio: aspectRatio, isLeftAligned: true)
+                keysStackView.addArrangedSubview(view)
+
+            case let .splitRight(symbolTop, symbolBottom, aspectRatio):
+                let view = SplitSideAlignedKeyView()
+                view.render(symbolTop: symbolTop, symbolBottom: symbolBottom, aspectRatio: aspectRatio, isLeftAligned: false)
+                keysStackView.addArrangedSubview(view)
+            }
         }
     }
 }

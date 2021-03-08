@@ -1,13 +1,12 @@
 import AppKit
 
-final class KeyView: NSView {
+final class SingleKeyView: NSView {
     private lazy var textView: NSTextField = {
         let textView = NSTextField()
         textView.textColor = .white
         textView.backgroundColor = .black
         textView.alignment = .center
         textView.isBordered = false
-        textView.font = .systemFont(ofSize: 20)
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
@@ -26,31 +25,28 @@ final class KeyView: NSView {
     func setupView() {
         wantsLayer = true
         layer?.backgroundColor = NSColor.black.cgColor
-        layer?.cornerRadius = 8
 
         addSubview(textView)
     }
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 80),
-            widthAnchor.constraint(equalToConstant: 80),
             textView.leadingAnchor.constraint(equalTo: leadingAnchor),
             textView.trailingAnchor.constraint(equalTo: trailingAnchor),
             textView.centerYAnchor.constraint(equalTo: centerYAnchor),
+
+            heightAnchor.constraint(equalTo: widthAnchor),
         ])
     }
 
-    func render(_ viewData: KeyViewData) {
-        switch viewData {
-        case let .single(symbol):
-            textView.stringValue = symbol
-        case let .splitCenter(symbolTop, symbolBottom):
-            textView.stringValue = symbolTop + symbolBottom
-        case let .splitLeft(symbolTop, symbolBottom, _):
-            textView.stringValue = symbolTop + symbolBottom
-        case let .splitRight(symbolTop, symbolBottom, _):
-            textView.stringValue = symbolTop + symbolBottom
-        }
+    override func layout() {
+        super.layout()
+
+        textView.font = .systemFont(ofSize: bounds.height / 3.5)
+        layer?.cornerRadius = bounds.height / 10
+    }
+
+    func render(symbol: String) {
+        textView.stringValue = symbol
     }
 }

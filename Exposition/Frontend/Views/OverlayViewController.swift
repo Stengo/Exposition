@@ -28,6 +28,7 @@ final class OverlayViewController: SubscriberViewController<OverlayViewData> {
         NSLayoutConstraint.activate([
             keyCombinationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             keyCombinationView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
+            keyCombinationView.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
 
