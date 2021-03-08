@@ -23,6 +23,7 @@
 		6DACBD2D25F6763600F4F4D1 /* SplitCenterKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DACBD2C25F6763600F4F4D1 /* SplitCenterKeyView.swift */; };
 		6DACBD3125F6ABA900F4F4D1 /* MenuHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DACBD3025F6ABA900F4F4D1 /* MenuHandler.swift */; };
 		6DACBD3525F6AC3F00F4F4D1 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DACBD3425F6AC3F00F4F4D1 /* SettingsState.swift */; };
+		6DACBD3925F6AF4400F4F4D1 /* SettingsSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DACBD3825F6AF4400F4F4D1 /* SettingsSideEffect.swift */; };
 		6DC8625225F4D90C000BBADC /* KeyLoggerSideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC8625125F4D90C000BBADC /* KeyLoggerSideEffect.swift */; };
 		6DC8625B25F4EE48000BBADC /* Sauce in Frameworks */ = {isa = PBXBuildFile; productRef = 6DC8625A25F4EE48000BBADC /* Sauce */; };
 		6DC8625E25F55075000BBADC /* KeyLoggerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC8625D25F55075000BBADC /* KeyLoggerState.swift */; };
@@ -47,6 +48,7 @@
 		6DACBD2C25F6763600F4F4D1 /* SplitCenterKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitCenterKeyView.swift; sourceTree = "<group>"; };
 		6DACBD3025F6ABA900F4F4D1 /* MenuHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHandler.swift; sourceTree = "<group>"; };
 		6DACBD3425F6AC3F00F4F4D1 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
+		6DACBD3825F6AF4400F4F4D1 /* SettingsSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSideEffect.swift; sourceTree = "<group>"; };
 		6DC8624625F4D322000BBADC /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
 		6DC8625125F4D90C000BBADC /* KeyLoggerSideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyLoggerSideEffect.swift; sourceTree = "<group>"; };
 		6DC8625D25F55075000BBADC /* KeyLoggerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyLoggerState.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		6DACBD3325F6AC0E00F4F4D1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				6DACBD3825F6AF4400F4F4D1 /* SettingsSideEffect.swift */,
 				6DACBD3425F6AC3F00F4F4D1 /* SettingsState.swift */,
 			);
 			path = Settings;
@@ -269,6 +272,7 @@
 				6DACBD3525F6AC3F00F4F4D1 /* SettingsState.swift in Sources */,
 				6D471B2025F4125300685B62 /* SingleKeyView.swift in Sources */,
 				6DC8625225F4D90C000BBADC /* KeyLoggerSideEffect.swift in Sources */,
+				6DACBD3925F6AF4400F4F4D1 /* SettingsSideEffect.swift in Sources */,
 				6DC8625E25F55075000BBADC /* KeyLoggerState.swift in Sources */,
 				6D471AF925F3754F00685B62 /* AppDelegate.swift in Sources */,
 				6DACBD3125F6ABA900F4F4D1 /* MenuHandler.swift in Sources */,

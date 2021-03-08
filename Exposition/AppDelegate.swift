@@ -3,6 +3,7 @@ import ReSwift
 
 enum AppDelegateAction: Action {
     case didFinishLaunching
+    case willTerminate
 }
 
 @main
@@ -33,5 +34,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuHandler = MenuHandler()
 
         store.dispatch(AppDelegateAction.didFinishLaunching)
+    }
+
+    func applicationWillTerminate(_: Notification) {
+        store.dispatch(AppDelegateAction.willTerminate)
     }
 }
