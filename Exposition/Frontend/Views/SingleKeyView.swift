@@ -42,9 +42,9 @@ final class SingleKeyView: NSView {
         textView.font = .systemFont(ofSize: bounds.height / 3.5)
         layer?.cornerRadius = bounds.height / 10
 
-        layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
-        textView.backgroundColor = NSColor.textBackgroundColor
-        textView.textColor = NSColor.secondaryLabelColor
+        layer?.backgroundColor = NSColor(named: "keyColor")?.cgColor
+        textView.backgroundColor = NSColor(named: "keyColor")
+        textView.textColor = NSColor(named: "symbolColor")
     }
 
     func render(symbol: String) {
