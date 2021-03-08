@@ -31,7 +31,9 @@ final class OverlayViewController: SubscriberViewController<OverlayViewData> {
         ])
     }
 
-    override func update(with _: OverlayViewData) {}
+    override func update(with viewData: OverlayViewData) {
+        keyCombinationView.render(viewData.keyCombination)
+    }
 
     @available(*, unavailable)
     required init?(coder _: NSCoder) {

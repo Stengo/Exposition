@@ -2,11 +2,7 @@ import AppKit
 
 final class KeyCombinationView: NSView {
     private lazy var keysStackView: NSStackView = {
-        let stackView = NSStackView(views: [
-            KeyView(),
-            KeyView(),
-            KeyView(),
-        ])
+        let stackView = NSStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -33,5 +29,14 @@ final class KeyCombinationView: NSView {
             keysStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             keysStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
+    }
+
+    func render(_ viewData: KeyCombinationViewData) {
+        keysStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        viewData.keys.forEach { keyViewData in
+            let view = KeyView()
+            view.render(keyViewData)
+            keysStackView.addArrangedSubview(view)
+        }
     }
 }
