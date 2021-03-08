@@ -11,6 +11,7 @@ struct OverlayViewData: ViewDataType {
     typealias StateFragment = OverlayStateFragment
 
     let keyCombination: KeyCombinationViewData
+    let position: SettingsState.Position
 
     static func fragment(of appState: AppState) -> StateFragment {
         return StateFragment(
@@ -20,6 +21,8 @@ struct OverlayViewData: ViewDataType {
     }
 
     init(for fragment: StateFragment) {
+        position = fragment.settingsState.position
+
         guard
             let keyEvent = fragment.keyLoggerState.latestKeyEvent,
             let key = Sauce.shared.key(by: Int(keyEvent.keyCode))
