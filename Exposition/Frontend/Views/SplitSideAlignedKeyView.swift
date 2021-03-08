@@ -5,7 +5,7 @@ final class SplitSideAlignedKeyView: NSView {
         let textView = NSTextField()
         textView.textColor = .white
         textView.backgroundColor = .black
-        textView.alignment = .center
+        textView.alignment = .left
         textView.isBordered = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
@@ -15,7 +15,7 @@ final class SplitSideAlignedKeyView: NSView {
         let textView = NSTextField()
         textView.textColor = .white
         textView.backgroundColor = .black
-        textView.alignment = .center
+        textView.alignment = .left
         textView.isBordered = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
@@ -73,10 +73,7 @@ final class SplitSideAlignedKeyView: NSView {
         layer?.cornerRadius = bounds.height / 10
     }
 
-    func render(symbolTop: String, symbolBottom: String, isLeftAligned: Bool) {
-        topTextView.alignment = isLeftAligned ? .left : .right
-        bottomTextView.alignment = isLeftAligned ? .left : .right
-
+    func render(symbolTop: String, symbolBottom: String) {
         topTextView.stringValue = symbolTop
         bottomTextView.stringValue = symbolBottom
     }

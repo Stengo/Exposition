@@ -60,14 +60,9 @@ final class KeyCombinationView: NSView {
                 view.render(symbolTop: symbolTop, symbolBottom: symbolBottom)
                 keysStackView.addArrangedSubview(view)
 
-            case let .splitLeft(symbolTop, symbolBottom):
+            case let .splitSide(symbolTop, symbolBottom):
                 let view = SplitSideAlignedKeyView()
-                view.render(symbolTop: symbolTop, symbolBottom: symbolBottom, isLeftAligned: true)
-                keysStackView.addArrangedSubview(view)
-
-            case let .splitRight(symbolTop, symbolBottom):
-                let view = SplitSideAlignedKeyView()
-                view.render(symbolTop: symbolTop, symbolBottom: symbolBottom, isLeftAligned: false)
+                view.render(symbolTop: symbolTop, symbolBottom: symbolBottom)
                 keysStackView.addArrangedSubview(view)
             }
         }
