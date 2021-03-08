@@ -165,9 +165,9 @@ enum KeyViewData {
         case .pageDown:
             self = .single(symbol: "page\ndown")
         case .leftArrow:
-            self = .single(symbol: "◄")
+            self = .single(symbol: "◀︎")
         case .rightArrow:
-            self = .single(symbol: "►")
+            self = .single(symbol: "▶︎")
         case .downArrow:
             self = .single(symbol: "▼")
         case .upArrow:
