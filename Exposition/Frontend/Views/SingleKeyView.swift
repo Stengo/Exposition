@@ -3,8 +3,6 @@ import AppKit
 final class SingleKeyView: NSView {
     private lazy var textView: NSTextField = {
         let textView = NSTextField()
-        textView.textColor = .white
-        textView.backgroundColor = .black
         textView.alignment = .center
         textView.isBordered = false
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +22,6 @@ final class SingleKeyView: NSView {
 
     func setupView() {
         wantsLayer = true
-        layer?.backgroundColor = NSColor.black.cgColor
 
         addSubview(textView)
     }
@@ -44,6 +41,10 @@ final class SingleKeyView: NSView {
 
         textView.font = .systemFont(ofSize: bounds.height / 3.5)
         layer?.cornerRadius = bounds.height / 10
+
+        layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
+        textView.backgroundColor = NSColor.textBackgroundColor
+        textView.textColor = NSColor.textColor
     }
 
     func render(symbol: String) {

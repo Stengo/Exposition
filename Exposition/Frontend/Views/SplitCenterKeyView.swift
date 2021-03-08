@@ -3,8 +3,6 @@ import AppKit
 final class SplitCenterKeyView: NSView {
     private lazy var topTextView: NSTextField = {
         let textView = NSTextField()
-        textView.textColor = .white
-        textView.backgroundColor = .black
         textView.alignment = .center
         textView.isBordered = false
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -13,8 +11,6 @@ final class SplitCenterKeyView: NSView {
 
     private lazy var bottomTextView: NSTextField = {
         let textView = NSTextField()
-        textView.textColor = .white
-        textView.backgroundColor = .black
         textView.alignment = .center
         textView.isBordered = false
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,6 +67,12 @@ final class SplitCenterKeyView: NSView {
         topTextView.font = .systemFont(ofSize: bounds.height / 4.9)
         bottomTextView.font = .systemFont(ofSize: bounds.height / 3.6)
         layer?.cornerRadius = bounds.height / 10
+
+        layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
+        topTextView.backgroundColor = NSColor.textBackgroundColor
+        topTextView.textColor = NSColor.textColor
+        bottomTextView.backgroundColor = NSColor.textBackgroundColor
+        bottomTextView.textColor = NSColor.textColor
     }
 
     func render(symbolTop: String, symbolBottom: String) {

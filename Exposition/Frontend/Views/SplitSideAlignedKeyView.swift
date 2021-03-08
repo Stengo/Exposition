@@ -3,8 +3,6 @@ import AppKit
 final class SplitSideAlignedKeyView: NSView {
     private lazy var topTextView: NSTextField = {
         let textView = NSTextField()
-        textView.textColor = .white
-        textView.backgroundColor = .black
         textView.alignment = .left
         textView.isBordered = false
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -13,8 +11,6 @@ final class SplitSideAlignedKeyView: NSView {
 
     private lazy var bottomTextView: NSTextField = {
         let textView = NSTextField()
-        textView.textColor = .white
-        textView.backgroundColor = .black
         textView.alignment = .left
         textView.isBordered = false
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,6 +67,12 @@ final class SplitSideAlignedKeyView: NSView {
         topTextView.font = .systemFont(ofSize: bounds.height / 3.5)
         bottomTextView.font = .systemFont(ofSize: bounds.height / 4.5)
         layer?.cornerRadius = bounds.height / 10
+
+        layer?.backgroundColor = NSColor.textBackgroundColor.cgColor
+        topTextView.backgroundColor = NSColor.textBackgroundColor
+        topTextView.textColor = NSColor.textColor
+        bottomTextView.backgroundColor = NSColor.textBackgroundColor
+        bottomTextView.textColor = NSColor.textColor
     }
 
     func render(symbolTop: String, symbolBottom: String) {
