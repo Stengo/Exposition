@@ -47,7 +47,7 @@ final class SplitSideAlignedKeyView: NSView {
             layoutGuide.centerYAnchor.constraint(equalTo: centerYAnchor),
             layoutGuide.centerXAnchor.constraint(equalTo: centerXAnchor),
             layoutGuide.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5),
-            layoutGuide.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.75),
+            layoutGuide.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.825),
 
             topTextView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
             topTextView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),

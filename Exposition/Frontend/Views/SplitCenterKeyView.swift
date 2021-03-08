@@ -47,7 +47,7 @@ final class SplitCenterKeyView: NSView {
             layoutGuide.leadingAnchor.constraint(equalTo: leadingAnchor),
             layoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor),
             layoutGuide.centerYAnchor.constraint(equalTo: centerYAnchor),
-            layoutGuide.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 1 / 3),
+            layoutGuide.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4),
 
             topTextView.leadingAnchor.constraint(equalTo: leadingAnchor),
             topTextView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -64,8 +64,8 @@ final class SplitCenterKeyView: NSView {
     override func layout() {
         super.layout()
 
-        topTextView.font = .systemFont(ofSize: bounds.height / 4.9)
-        bottomTextView.font = .systemFont(ofSize: bounds.height / 3.6)
+        topTextView.font = .systemFont(ofSize: bounds.height / 4.25)
+        bottomTextView.font = .systemFont(ofSize: bounds.height / 3)
         layer?.cornerRadius = bounds.height / 10
 
         layer?.backgroundColor = NSColor(named: "keyColor")?.cgColor

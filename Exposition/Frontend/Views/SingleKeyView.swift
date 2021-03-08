@@ -39,7 +39,7 @@ final class SingleKeyView: NSView {
     override func layout() {
         super.layout()
 
-        textView.font = .systemFont(ofSize: bounds.height / 3.5)
+        textView.font = .systemFont(ofSize: bounds.height / 3)
         layer?.cornerRadius = bounds.height / 10
 
         layer?.backgroundColor = NSColor(named: "keyColor")?.cgColor
