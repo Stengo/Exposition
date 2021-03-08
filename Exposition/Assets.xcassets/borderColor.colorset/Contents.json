@@ -5,7 +5,7 @@
         "color-space" : "extended-gray",
         "components" : {
           "alpha" : "1.000",
-          "white" : "0.347"
+          "white" : "0.300"
         }
       },
       "idiom" : "universal"
@@ -21,7 +21,7 @@
         "color-space" : "extended-gray",
         "components" : {
           "alpha" : "1.000",
-          "white" : "0.402"
+          "white" : "0.300"
         }
       },
       "idiom" : "universal"
