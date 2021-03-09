@@ -23,52 +23,47 @@ final class MenuHandler: StoreSubscriber {
         return statusItem
     }()
 
-    init() {
-        store.subscribe(self) { subscription in
-            subscription
-                .select(MenuStateFragment.init)
-                .skipRepeats()
-        }
-    }
+    private lazy var topLeftItem: NSMenuItem = {
+        let item = NSMenuItem(title: "Top Left", action: #selector(didSelectTopLeft), keyEquivalent: "")
+        item.target = self
+        return item
+    }()
 
-    func newState(state: MenuStateFragment) {
-        DispatchQueue.main.async {
-            self.createMenu(from: state)
-        }
-    }
+    private lazy var topRightItem: NSMenuItem = {
+        let item = NSMenuItem(title: "Top Right", action: #selector(didSelectTopRight), keyEquivalent: "")
+        item.target = self
+        return item
+    }()
 
-    func createMenu(from stateFragment: MenuStateFragment) {
-        let menu = NSMenu()
+    private lazy var bottomLeftItem: NSMenuItem = {
+        let item = NSMenuItem(title: "Bottom Left", action: #selector(didSelectBottomLeft), keyEquivalent: "")
+        item.target = self
+        return item
+    }()
 
-        let showCombinationsItem = NSMenuItem(
+    private lazy var bottomRightItem: NSMenuItem = {
+        let item = NSMenuItem(title: "Bottom Right", action: #selector(didSelectBottomRight), keyEquivalent: "")
+        item.target = self
+        return item
+    }()
+
+    private lazy var showCombinationsItem: NSMenuItem = {
+        let item = NSMenuItem(
             title: "Show ^⌥⌘ combinations only",
             action: #selector(didSelectShowCombinationsOnly),
             keyEquivalent: ""
         )
-        showCombinationsItem.state = stateFragment.settingsState.shouldShowCombinationsOnly ? .on : .off
-        showCombinationsItem.target = self
+        item.target = self
+        return item
+    }()
+
+    private lazy var menu: NSMenu = {
+        let menu = NSMenu()
+
         menu.addItem(showCombinationsItem)
 
         let positionItem = NSMenuItem(title: "Position", action: nil, keyEquivalent: "")
         let positionSubmenu = NSMenu()
-        let topLeftItem = NSMenuItem(title: "Top Left", action: #selector(didSelectTopLeft), keyEquivalent: "")
-        let topRightItem = NSMenuItem(title: "Top Right", action: #selector(didSelectTopRight), keyEquivalent: "")
-        let bottomLeftItem = NSMenuItem(title: "Bottom Left", action: #selector(didSelectBottomLeft), keyEquivalent: "")
-        let bottomRightItem = NSMenuItem(title: "Bottom Right", action: #selector(didSelectBottomRight), keyEquivalent: "")
-        topLeftItem.target = self
-        topRightItem.target = self
-        bottomLeftItem.target = self
-        bottomRightItem.target = self
-        switch stateFragment.settingsState.position {
-        case .topLeft:
-            topLeftItem.state = .on
-        case .topRight:
-            topRightItem.state = .on
-        case .bottomLeft:
-            bottomLeftItem.state = .on
-        case .bottomRight:
-            bottomRightItem.state = .on
-        }
         positionSubmenu.addItem(topLeftItem)
         positionSubmenu.addItem(topRightItem)
         positionSubmenu.addItem(bottomLeftItem)
@@ -76,15 +71,34 @@ final class MenuHandler: StoreSubscriber {
         positionItem.submenu = positionSubmenu
         menu.addItem(positionItem)
 
-        menu.addItem(
-            NSMenuItem(
-                title: "Quit Exposition",
-                action: #selector(NSApplication.terminate),
-                keyEquivalent: ""
-            )
-        )
+        menu.addItem(withTitle: "Quit Exposition", action: #selector(NSApplication.terminate), keyEquivalent: "")
 
+        return menu
+    }()
+
+    init() {
+        store.subscribe(self) { subscription in
+            subscription
+                .select(MenuStateFragment.init)
+                .skipRepeats()
+        }
         statusItem.menu = menu
+    }
+
+    func newState(state: MenuStateFragment) {
+        DispatchQueue.main.async {
+            self.updateMenu(with: state)
+        }
+    }
+
+    func updateMenu(with stateFragment: MenuStateFragment) {
+        showCombinationsItem.state = stateFragment.settingsState.shouldShowCombinationsOnly ? .on : .off
+
+        let position = stateFragment.settingsState.position
+        topLeftItem.state = position == .topLeft ? .on : .off
+        topRightItem.state = position == .topRight ? .on : .off
+        bottomLeftItem.state = position == .bottomLeft ? .on : .off
+        bottomRightItem.state = position == .bottomRight ? .on : .off
     }
 
     @objc private func didSelectShowCombinationsOnly() {
