@@ -27,9 +27,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var menuHandler: MenuHandler?
 
     func applicationDidFinishLaunching(_: Notification) {
-        window.makeKeyAndOrderFront(nil)
-        let screenFrame = NSScreen.main?.frame ?? .zero
-        window.setFrame(screenFrame, display: true)
+        updateWindowFrame()
 
         menuHandler = MenuHandler()
 
@@ -38,5 +36,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_: Notification) {
         store.dispatch(AppDelegateAction.willTerminate)
+    }
+
+    func applicationDidChangeScreenParameters(_: Notification) {
+        updateWindowFrame()
+    }
+
+    private func updateWindowFrame() {
+        window.makeKeyAndOrderFront(nil)
+        let screenFrame = NSScreen.main?.frame ?? .zero
+        window.setFrame(screenFrame, display: true)
     }
 }
