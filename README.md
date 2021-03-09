@@ -1,6 +1,6 @@
 <h3 align="center">
-  <a href="https://github.com/Stengo/Exposition/blob/main/Exposition/Assets.xcassets/AppIcon.appiconset/icon64.png">
-  <img src="https://github.com/Stengo/Exposition/blob/main/Exposition/Assets.xcassets/AppIcon.appiconset/icon128.png?raw=true" alt="Exposition Icon">
+  <a href="https://github.com/Stengo/Exposition/blob/main/Exposition/Assets.xcassets/AppIcon.appiconset/icon256.png">
+  <img src="https://github.com/Stengo/Exposition/blob/main/Exposition/Assets.xcassets/AppIcon.appiconset/icon256.png?raw=true" alt="Exposition Icon" width="128">
   </a>
 </h3>
 
