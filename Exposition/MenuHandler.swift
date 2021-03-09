@@ -71,6 +71,17 @@ final class MenuHandler: StoreSubscriber {
         positionItem.submenu = positionSubmenu
         menu.addItem(positionItem)
 
+        let acknowledgementsItem = NSMenuItem(title: "Acknowledgements", action: nil, keyEquivalent: "")
+        let acknowledgementsSubmenu = NSMenu()
+        let reSwiftItem = NSMenuItem(title: "ReSwift", action: #selector(didSelectReSwift), keyEquivalent: "")
+        let sauceItem = NSMenuItem(title: "Sauce", action: #selector(didSelectSauce), keyEquivalent: "")
+        reSwiftItem.target = self
+        sauceItem.target = self
+        acknowledgementsSubmenu.addItem(reSwiftItem)
+        acknowledgementsSubmenu.addItem(sauceItem)
+        acknowledgementsItem.submenu = acknowledgementsSubmenu
+        menu.addItem(acknowledgementsItem)
+
         menu.addItem(withTitle: "Quit Exposition", action: #selector(NSApplication.terminate), keyEquivalent: "")
 
         return menu
@@ -119,5 +130,13 @@ final class MenuHandler: StoreSubscriber {
 
     @objc private func didSelectBottomRight() {
         store.dispatch(MenuAction.didSelectPosition(.bottomRight))
+    }
+
+    @objc private func didSelectReSwift() {
+        NSWorkspace.shared.open(URL(string: "https://github.com/ReSwift/ReSwift")!)
+    }
+
+    @objc private func didSelectSauce() {
+        NSWorkspace.shared.open(URL(string: "https://github.com/Clipy/Sauce")!)
     }
 }
