@@ -10,9 +10,12 @@ enum SettingsRestorationAction: Action {
 
 func settingsSideEffect() -> SideEffect {
     return { action, dispatch, getState in
+        guard let appState = getState() else {
+            return
+        }
         switch action {
         case AppDelegateAction.willTerminate:
-            let data = try? JSONEncoder().encode(getState()?.settingsState)
+            let data = try? JSONEncoder().encode(appState.settingsState)
             userDefaults.setValue(data, forKey: userDefaultsKey)
 
         case AppDelegateAction.didFinishLaunching:

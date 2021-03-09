@@ -2,7 +2,7 @@ import Cocoa
 import Foundation
 
 func keyLoggerSideEffect() -> SideEffect {
-    return { action, dispatch, _ in
+    return { action, dispatch, getState in
         switch action {
         case AppDelegateAction.didFinishLaunching:
             guard isPermissionGranted(shouldAskForPermission: true) else {
@@ -10,11 +10,22 @@ func keyLoggerSideEffect() -> SideEffect {
                 return
             }
             NSEvent.addGlobalMonitorForEvents(matching: [.keyDown]) { event in
+                guard let appState = getState() else {
+                    return
+                }
+
                 let keyEvent = KeyEvent(
                     keyCode: event.keyCode,
                     modifierFlags: event.modifierFlags,
                     date: Date()
                 )
+
+                let shouldShowCombinationsOnly = appState.settingsState.shouldShowCombinationsOnly
+                let isCombination = keyEvent.modifierFlags.isDisjoint(with: [.control, .option, .command]) == false
+                guard shouldShowCombinationsOnly == false || isCombination else {
+                    return
+                }
+
                 dispatch(KeyLoggerAction.didTrigger(keyEvent))
             }
 
