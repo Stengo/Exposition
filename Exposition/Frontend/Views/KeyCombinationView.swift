@@ -53,14 +53,14 @@ final class KeyCombinationView: NSView {
         }
 
         animationTimer?.invalidate()
-        animationTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { [weak self] _ in
+        animationTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { [weak self] _ in
             NSAnimationContext.runAnimationGroup { context in
-                context.duration = 0.5
+                context.duration = 0.25
                 self?.animator().alphaValue = 0
             }
         })
         NSAnimationContext.runAnimationGroup { [weak self] context in
-            context.duration = 0.5
+            context.duration = 0.25
             self?.animator().alphaValue = 1
         }
         keysStackView.arrangedSubviews.forEach {
