@@ -6,6 +6,11 @@
 
 # Exposition
 
+<h3 align="center">
+  <img src="https://user-images.githubusercontent.com/12018882/110538886-da86b880-8124-11eb-9700-8a9815a0d24d.gif" alt="Exposition Icon">
+  </a>
+</h3>
+
 ## Getting Started
 To configure signing without versioning getting in the way, please create a file named `DevelopmentTeam.xcconfig` in the `Configurations` folder.
 In there you can specify your development team ID as:
