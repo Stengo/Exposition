@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.level = .floating
         window.ignoresMouseEvents = true
         window.hasShadow = false
+        window.collectionBehavior = .canJoinAllSpaces
         return window
     }()
 
