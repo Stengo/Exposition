@@ -49,7 +49,7 @@ final class KeyCombinationView: NSView {
         layer?.shadowColor = .black
         layer?.shadowOffset = CGSize(width: 0, height: -bounds.height / 20)
         layer?.shadowRadius = bounds.height / 10
-        layer?.shadowOpacity = 0.4
+        layer?.shadowOpacity = 0.3
         layer?.masksToBounds = false
     }
 
