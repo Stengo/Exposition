@@ -45,6 +45,12 @@ final class KeyCombinationView: NSView {
         keysStackView.edgeInsets = NSEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
 
         layer?.backgroundColor = NSColor(named: "borderColor")?.cgColor
+
+        layer?.shadowColor = .black
+        layer?.shadowOffset = CGSize(width: 0, height: -bounds.height / 20)
+        layer?.shadowRadius = bounds.height / 10
+        layer?.shadowOpacity = 0.4
+        layer?.masksToBounds = false
     }
 
     func render(_ viewData: KeyCombinationViewData) {
