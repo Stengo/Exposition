@@ -7,21 +7,13 @@ final class OverlayViewController: SubscriberViewController<OverlayViewData> {
         return view
     }()
 
-    private lazy var topConstraint: NSLayoutConstraint = {
-        keyCombinationView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16 + 22)
-    }()
+    private lazy var topConstraint: NSLayoutConstraint = keyCombinationView.topAnchor.constraint(equalTo: view.topAnchor, constant: 16 + 22)
 
-    private lazy var bottomConstraint: NSLayoutConstraint = {
-        keyCombinationView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16)
-    }()
+    private lazy var bottomConstraint: NSLayoutConstraint = keyCombinationView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16)
 
-    private lazy var rightConstraint: NSLayoutConstraint = {
-        keyCombinationView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
-    }()
+    private lazy var rightConstraint: NSLayoutConstraint = keyCombinationView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
 
-    private lazy var leftConstraint: NSLayoutConstraint = {
-        keyCombinationView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16)
-    }()
+    private lazy var leftConstraint: NSLayoutConstraint = keyCombinationView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16)
 
     init() {
         super.init(nibName: nil, bundle: nil)
